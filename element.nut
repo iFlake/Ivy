@@ -16,7 +16,7 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
     {
         base.constructor(instance);
 
-        RegisterEvents(
+        this.RegisterEvents(
         {
             Focus        = ::Ivy.Signal(),
             Blur         = ::Ivy.Signal(),
