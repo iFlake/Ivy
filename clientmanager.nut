@@ -162,4 +162,31 @@ class Ivy.ClientManager
     }
 
     function HandleGameResize(width, height) this.On.GameResize.Emit(::Ivy.Vector2(width, height, false));
+
+    function Register()
+    {
+        Script.ScriptLoad       <- this.HandleScriptLoad.bindenv(this);
+        Script.ScriptUnload     <- this.HandleScriptLoad.bindenv(this);
+        Script.ScriptProcess    <- this.HandleScriptProcess.bindenv(this);
+        
+        Player.PlayerDeath      <- this.HandlePlayerDeath.bindenv(this);
+        Player.PlayerShoot      <- this.HandlePlayerShoot.bindenv(this);
+
+        Server.ServerData       <- this.HandleServerData.bindenv(this);
+
+        GUI.ElementFocus        <- this.HandleElementFocus.bindenv(this);
+        GUI.ElementBlur         <- this.HandleElementBlur.bindenv(this);
+        GUI.ElementHoverOver    <- this.HandleElementHoverOver.bindenv(this);
+        GUI.ElementHoverOut     <- this.HandleElementHoverOut.bindenv(this);
+        GUI.ElementClick        <- this.HandleElementClick.bindenv(this);
+        GUI.ElementRelease      <- this.HandleElementRelease.bindenv(this);
+        GUI.ElementDrag         <- this.HandleElementDrag.bindenv(this);
+        GUI.CheckboxToggle      <- this.HandleCheckboxToggle.bindenv(this);
+        GUI.WindowClose         <- this.HandleWindowClose.bindenv(this);
+        GUI.InputReturn         <- this.HandleInputReturn.bindenv(this);
+        GUI.ListboxSelect       <- this.HandleListboxSelect.bindenv(this);
+        GUI.ScrollbarScroll     <- this.HandleScrollbarScroll.bindenv(this);
+        GUI.WindowResize        <- this.HandleWindowResize.bindenv(this);
+        GUI.GameResize          <- this.HandleGameResize.bindenv(this);
+    }
 }
