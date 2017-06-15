@@ -17,8 +17,8 @@ class Ivy.Entity.Label extends Ivy.Entity.Element
         base.constructor(instance);
     }
 
-    static function Create(position, color)
+    static function Create(color)
     {
-        return ::Ivy.Entity.Label(::GUIEditbox(position.Translate(), color));
+        return ::Ivy.Entity.Label(::GUILabel(::VectorScreen(0, 0), color));
     }
 }

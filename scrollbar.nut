@@ -12,9 +12,6 @@ Namespace("Ivy::Entity");
 
 class Ivy.Entity.Scrollbar extends Ivy.Entity.Element
 {
-    Position    = null;
-    Size        = null;
-
     constructor (instance)
     {
         base.constructor(instance);
@@ -27,11 +24,6 @@ class Ivy.Entity.Scrollbar extends Ivy.Entity.Element
 
     static function Create(position, size, color)
     {
-        local scrollbar = ::Ivy.Entity.Scrollbar(::GUIScrollbar(position.Translate(), size.Translate(), color));
-
-        scrollbar.Position    = position;
-        scrollbar.Size        = size;
-
-        return scrollbar;
+        return ::Ivy.Entity.Scrollbar(::GUIScrollbar(::VectorScreen(0, 0), size.Translate(), color));
     }
 }

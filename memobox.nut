@@ -17,8 +17,8 @@ class Ivy.Entity.Memobox extends Ivy.Entity.Element
         base.constructor(instance);
     }
 
-    static function Create(position, size, color)
+    static function Create(size, color)
     {
-        return ::Ivy.Entity.Memobox(::GUIMemobox(position.Translate(), size.Translate(), color));
+        return ::Ivy.Entity.Memobox(::GUIMemobox(::VectorScreen(0, 0), size.Translate(), color));
     }
 }

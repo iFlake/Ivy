@@ -22,8 +22,8 @@ class Ivy.Entity.Listbox extends Ivy.Entity.Element
         });
     }
 
-    static function Create(position, size, color, selectedcolor)
+    static function Create(size, color, selectedcolor)
     {
-        return ::Ivy.Entity.Listbox(::GUIListbox(position.Translate(), size.Translate(), color, selectedcolor));
+        return ::Ivy.Entity.Listbox(::GUIListbox(::VectorScreen(0, 0), size.Translate(), color, selectedcolor));
     }
 }

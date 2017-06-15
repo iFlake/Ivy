@@ -14,19 +14,26 @@ class Ivy.Entity.Entity
 {
     On          = null;
     Instance    = null;
+    SetHooks    = null;
+    GetHooks    = null;
 
     constructor (instance)
     {
         this.On          = { };
         this.Instance    = instance;
+        this.SetHooks    = { };
+        this.GetHooks    = { };
     }
 
     function Delete() this.Instance = null;
 
     function RegisterEvents(events) foreach (idx, event in events) this.On.rawset(idx, event);
 
-    function _set(idx, value) this.Instance[idx] = value;
-    function _get(idx) return this.Instance[idx];
+    function RegisterSetHooks(hooks) foreach (idx, hook in hooks) this.SetHooks.rawset(idx, hook);
+    function RegisterGetHooks(hooks) foreach (idx, hook in hooks) this.GetHooks.rawset(idx, hook);
+
+    function _set(idx, value) return this.SetHooks.rawin(idx) == true ? this.SetHooks[idx](value) : this.Instance[idx] = value;
+    function _get(idx) return this.GetHooks.rawin(idx) == true ? this.GetHooks[idx]() : this.Instance[idx];
     function _delslot(idx) return this.Instance._delslot(idx);
 
     function _add(with) return this.Instance + with;

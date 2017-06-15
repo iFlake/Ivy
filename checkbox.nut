@@ -31,8 +31,8 @@ class Ivy.Entity.Checkbox extends Ivy.Entity.Element
         }, this);
     }
 
-    static function Create(position, color)
+    static function Create(color)
     {
-        return ::Ivy.Entity.Checkbox(::GUICheckbox(position.Translate(), color));
+        return ::Ivy.Entity.Checkbox(::GUICheckbox(::VectorScreen(0, 0), color));
     }
 }

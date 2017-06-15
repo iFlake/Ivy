@@ -22,8 +22,8 @@ class Ivy.Entity.Editbox extends Ivy.Entity.Element
         });
     }
 
-    static function Create(position, size, color)
+    static function Create(size, color)
     {
-        return ::Ivy.Entity.Editbox(::GUIEditbox(position.Translate(), size.Translate(), color));
+        return ::Ivy.Entity.Editbox(::GUIEditbox(::VectorScreen(0, 0), size.Translate(), color));
     }
 }

@@ -17,8 +17,8 @@ class Ivy.Entity.ProgressBar extends Ivy.Entity.Element
         base.constructor(instance);
     }
 
-    static function Create(position, size, color, selectedcolor, maxvalue = 100)
+    static function Create(size, color, selectedcolor, maxvalue = 100)
     {
-        return ::Ivy.Entity.ProgressBar(::GUIProgressBar(position.Translate(), size.Translate(), color, selectedcolor, GUI_FLAG_NONE, maxvalue));
+        return ::Ivy.Entity.ProgressBar(::GUIProgressBar(::VectorScreen(0, 0), size.Translate(), color, selectedcolor, GUI_FLAG_NONE, maxvalue));
     }
 }
