@@ -1,5 +1,5 @@
 /*
-    autoload.nut
+    config.nut
     
     creator:     Ice Flake
     developers:  Ice Flake

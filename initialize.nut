@@ -1,10 +1,10 @@
 /*
-    autoload.nut
+    initialize.nut
     
     creator:     Ice Flake
     developers:  Ice Flake
     for:         Ivy
-    description: Configuration file
+    description: Initialization file
     license:     CLNS
 */
 
