@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Client manager
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy");

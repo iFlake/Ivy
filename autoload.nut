@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Bootstrap
-    license:     CLNS
+    license:     Unlicense
 */
 
 dofile("Ivy/namespaces.nut");
@@ -31,7 +31,7 @@ dofile("Ivy/listbox.nut");
 dofile("Ivy/memobox.nut");
 dofile("Ivy/progressbar.nut");
 dofile("Ivy/scrollbar.nut");
-
-dofile("Ivy/errorhandler.nut");
+dofile("Ivy/sprite.nut");
+dofile("Ivy/window.nut");
 
 dofile("Ivy/initialize.nut");

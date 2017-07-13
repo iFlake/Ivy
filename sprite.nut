@@ -1,26 +1,24 @@
 /*
-    canvas.nut
+    sprite.nut
     
     creator:     Ice Flake
     developers:  Ice Flake
     for:         Ivy
-    description: Canvas extensions
+    description: Sprite extensions
     license:     Unlicense
 */
 
 Namespace("Ivy::Entity");
 
-class Ivy.Entity.Canvas extends Ivy.Entity.Element
+class Ivy.Entity.Sprite extends Ivy.Entity.Element
 {
     constructor (instance)
     {
         base.constructor(instance);
-
-        this.RegisterEvents({ });
     }
 
-    static function Create()
+    static function Create(file, color)
     {
-        return ::Ivy.Entity.Canvas(::GUICanvas());
+        return ::Ivy.Entity.Sprite(::GUISprite(file, ::VectorScreen(0, 0), color));
     }
 }

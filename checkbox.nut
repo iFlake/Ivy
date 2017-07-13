@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Checkbox extensions
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy::Entity");

@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Initialization file
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy");
@@ -14,10 +14,4 @@ if (ICRegisterClientManager == true)
 {
     Ivy.IClientManager    <- Ivy.ClientManager();
     Ivy.IClientManager.Register();
-}
-
-if (ICRegisterErrorHandler == true)
-{
-    Ivy.IErrorHandler    <- Ivy.ErrorHandler();
-    Ivy.IErrorHandler.Register();
 }

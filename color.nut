@@ -1,11 +1,11 @@
 /*
-    vector.nut
+    color.nut
     
     creator:     Ice Flake
     developers:  Ice Flake
     for:         Ivy
     description: Color
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy");

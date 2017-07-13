@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Base entity
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy::Entity");
@@ -43,7 +43,7 @@ class Ivy.Entity.Entity
     function _unm(with) return -this.Instance;
     function _modulo(with) return this.Instance % with;
 
-    function _cmp(with) return this.Instance == with;
+    function _cmp(with) return this.Instance <=> with;
     function _nexti() return this.Instance._nexti();
     function _call(...) return this.Instance._call.acall(vargv);
 }

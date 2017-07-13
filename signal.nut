@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Signal events
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy");
@@ -36,7 +36,9 @@ class Ivy.Signal
         connection.Environment    = env == null ? ::getroottable() : env;
         connection.Event          = event;
 
-        this.Connections.rawset(this.AllocateConnectionIndex(), connection);
+        this.Connections[this.AllocateConnectionIndex()] <- connection;
+
+        return connection;
     }
 
     function ConnectDispose(event, iterations, env = null)
@@ -48,7 +50,17 @@ class Ivy.Signal
 
         connection.Dispose        = iterations;
 
-        this.Connections.rawset(this.AllocateConnectionIndex(), connection);
+        this.Connections[this.AllocateConnectionIndex()] <- connection;
+
+        return connection;
+    }
+
+    function Disconnect(connection)
+    {
+        foreach (idx, _connection in this.Connections)
+        {
+            if (_connection == connection) delete this.Connections[idx];
+        }
     }
 
     function Emit(...)
@@ -61,7 +73,7 @@ class Ivy.Signal
 
                 if (connection.Dispose < 0)
                 {
-                    this.Connections.rawdelete(idx);
+                    delete this.Connections[idx];
                     continue;
                 }
             }

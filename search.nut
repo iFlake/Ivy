@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Entity searches
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy::Search");

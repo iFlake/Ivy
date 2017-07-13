@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Namespace-like functionality for Squirrel
-    license:     CLNS
+    license:     Unlicense
 */
 
 function Namespace(ns)

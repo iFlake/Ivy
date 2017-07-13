@@ -5,7 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Player entity
-    license:     CLNS
+    license:     Unlicense
 */
 
 Namespace("Ivy::Entity");

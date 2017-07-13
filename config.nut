@@ -5,9 +5,7 @@
     developers:  Ice Flake
     for:         Ivy
     description: Configuration file
-    license:     CLNS
+    license:     Unlicense
 */
 
-const ICRegisterClientManager    = true;
-const ICRegisterErrorHandler     = true;
 const ICAutoAdjustDimensions     = true;
