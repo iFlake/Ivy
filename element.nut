@@ -23,7 +23,7 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
     _Relative          = null;
     _Offset            = null;
 
-    constructor (instance)
+    constructor (instance, size)
     {
         base.constructor(instance);
 
@@ -67,7 +67,9 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
         });
 
         this._Position    = this.Instance.Position;
-        this._Size        = this.Instance.Size;
+        this._Size        = size;
+
+        this.Size         = this._Size;
 
         if (ICAutoAdjustDimensions == true)
         {
