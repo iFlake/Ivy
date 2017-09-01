@@ -19,8 +19,8 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
 
     _Parent            = null;
     
-    _Relation          = null;
     _Relative          = null;
+    _Relation          = null;
     _Offset            = null;
 
     constructor (instance, size)
@@ -56,14 +56,32 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
             {
                 this._Parent    = value;
                 this._Parent.AddChild(this);
+            },
+            "Relative": function (value)
+            {
+                this._Relative    = value;
+                this.RenderRelation();
+            },
+            "Relation": function (value)
+            {
+                this._Relation    = value;
+                this.RenderRelation();
+            },
+            "Offset": function (value)
+            {
+                this._Offset    = value;
+                this.RenderRelation();
             }
         });
 
         this.RegisterGetHooks(
         {
-            "Position": @() this._Position;
-            "Size": @() this._Size;
-            "Parent": @() this._Parent;
+            "Position": @() this._Position,
+            "Size": @() this._Size,
+            "Parent": @() this._Parent,
+            "Relative": @() this._Relative,
+            "Relation": @() this._Relation,
+            "Offset": @() this._Offset
         });
 
         this._Position    = this.Instance.Position;
@@ -98,5 +116,17 @@ class Ivy.Entity.Element extends Ivy.Entity.Entity
     {
         foreach (setting, value in settings) this[setting] = value;
         return this;
+    }
+
+
+    function RenderRelation()
+    {
+        if (this.Relation != null)
+        {
+            local baseposition    =
+                this.Relative == null ? Ivy.Vector2(0, 0) : this.Relative.Position;
+            
+            
+        }
     }
 }
